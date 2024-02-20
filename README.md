@@ -1,25 +1,27 @@
 # Single-Cell RNA-seq Analysis of Mouse Neocortex
 
 ## Overview
-This project aims to analyze single-cell RNA sequencing (RNA-seq) data from the mouse neocortex, with the objective of uncovering its hierarchical structure and identifying key genes. The neocortex is crucial for higher-level brain functions such as perception and cognition. Through this analysis, we explore the complexities of cellular gene expression within this brain region, leveraging various subsets of a comprehensive dataset compiled by the Allen Institute.
+This project focuses on analyzing a single-cell RNA sequencing (RNA-seq) dataset from the mouse neocortex, aiming to unveil hierarchical structures and identify significant genes. The dataset, compiled by the Allen Institute, encompasses various subsets of a larger single-cell RNA-seq dataset, offering insights into the cellular composition of the neocortex, a critical brain region responsible for higher-level functions like perception and cognition.
 
 ## Data Description
-The dataset consists of a counts matrix, where each row represents an individual cell and each column corresponds to a gene, measured in normalized transcript compatibility counts (TCC), scaled to counts per million. This structure allows us to quantify gene expression levels across different cells.
+The RNA-seq data is structured as a counts matrix, with rows representing individual cells and columns corresponding to genes, measured as normalized transcript compatibility counts (TCC) in counts per million. This setup allows for the quantitative analysis of gene expression levels across cells.
 
-## Data Sources
-The data, available in gene_analysis_data.tar.gz, is divided into three main parts for structured analysis:
-
-- Labeled Subset (p1): A small, labeled portion of the dataset including a count matrix and clustering labels derived from domain knowledge and statistical testing. This subset serves as a foundation for initial exploratory analysis.
-- Unsupervised Subset (p2_unsupervised): Contains only a count matrix for further exploration without predefined labels.
-- Evaluation Subset (p2_evaluation): Includes labeled training and test sets for evaluating feature selection and model performance.
-Reduced versions of the unsupervised and evaluation datasets (p2_unsupervised_reduced and p2_evaluation_reduced) are provided for efficiency in computational resource usage.
+## Dataset Structure
+- p1 (Labeled Subset): A small portion of the data with both a counts matrix (X) and "ground truth" clustering labels (y), derived from domain knowledge and statistical testing, for initial analysis.
+- p2_unsupervised: Contains only a count matrix for exploratory analysis without predefined labels.
+- p2_evaluation: Includes a labeled training and test set for feature selection evaluation.
+Reduced versions of the datasets ('p2_unsupervised_reduced' and 'p2_evaluation_reduced') are available for more resource-efficient analysis.
 
 ## Methodology
-Our analysis consists of three main stages, each designed to progressively explore and understand the dataset's underlying structure and the role of genes in cellular differentiation:
-
-- Exploratory Analysis: Utilizing visualization and clustering techniques to unveil the dataset's structure and identify clusters within the cell population.
-- Feature Discovery: Applying clustering and logistic regression on a larger subset to identify informative features distinguishing different cell types.
-- Robustness Check: Revisiting analytical decisions (e.g., T-SNE hyperparameters, cluster numbers) to assess the stability of our findings against these choices.
+### Phase 1: Exploratory Analysis
+Objective: Explore a small subset of the data using visualization and clustering methods to understand its structure.
+Tools: Various visualization techniques and clustering algorithms.
+### Phase 2: Feature Discovery
+Objective: Expand analysis to a larger subset, employing clustering and logistic regression to unearth features that distinguish cell types.
+Approach: Utilize insights from Phase 1 to guide feature selection and model evaluation.
+### Phase 3: Robustness and Reevaluation
+Objective: Reassess analytical decisions (e.g., T-SNE hyperparameters, cluster count) to evaluate the robustness of findings.
+Method: Critical examination of methodological choices and their impact on the results.
 
 ## Requirements
 Python 3.x
