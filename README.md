@@ -29,3 +29,6 @@ Libraries: numpy, pandas, matplotlib, scikit-learn, seaborn, and others as speci
 
 ## Contributing
 Contributions to the project are welcome. Please refer to the contributing guidelines for more details.
+
+## Liscense
+Done under MITx Data Analysis Course
